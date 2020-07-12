@@ -1,0 +1,5 @@
+D G "__PCH__" 0 10 ""5.015""
+D G "__DEVICE__" 0 10 ""
+D G "__DATE__" 0 10 ""03-nov-18""
+D G "__TIME__" 0 10 ""16:44:40"" "#byte PORT = 0xF81"
+V G "PANTALLAS_1" 0 9 "int8" `34 

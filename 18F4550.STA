@@ -1,0 +1,158 @@
+
+ROM used:   11188/32768 (34%)
+            11188/32768 (34%) including unused fragments
+
+            2.3 Average locations per line
+            7.5 Average locations per statement
+
+RAM used:   128/2048 (6%) at main() level
+            182/2048 (9%) worst case
+
+Stack used: 12 worst case (8 in main + 4 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  185   104   7  18F4550.c
+  837     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files\PICC\Devices\18F4550.h
+  147     0   0  includes.c
+  321    79   5  FLEX_LCD420.c
+ 1351   359  24  ..\..\..\..\..\..\..\..\..\..\Program Files\PICC\Drivers\stdlib.h
+   32     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files\PICC\Drivers\stddef.h
+  423   125   8  ..\..\..\..\..\..\..\..\..\..\Program Files\PICC\Drivers\string.h
+   28     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files\PICC\Drivers\ctype.h
+   93    40   3  Base.c
+  641   224  15  TECLADO2.c
+  271   209  14  Pantallas.c
+  262   244  16  Modo_programacion.c
+  132    76   5  MAX6675.c
+   35     0   0  MAX6675.h
+   41    31   2  Adquirir_Datos.c
+----- -----
+ 4799  1491 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   0    1             @delay_ms1
+0     30   0    0             @const700
+0     70   0    1   328  2.7  lcd_send_nibble
+0     68   0    1   389  2.3  lcd_read_nibble
+0     36   0    3   165  3.3  lcd_read_byte
+0     66   0    3   319  4.1  lcd_send_byte
+0     94   0    2   411  4.5  lcd_init
+0     64   0    4   386  6.5  lcd_gotoxy
+0     72   0    1   310  4.8  lcd_putc
+0    242   1   11             @MULFF
+0     54   0    2             @ITOF
+0    618   3   16             @ADDFF
+0     88   0    9   252  4.0  Leer_EEPROM
+0    206   1   11   526  6.7  Guardar_EEPROM
+0     64   0    0   250  1.4  Beep_largo
+0     52   0    0   168  1.0  Beep_corto
+0     22   0    0   163  1.8  TRIS_IN
+0    284   1    0  1166  6.8  leer_botones
+0    346   2    0  1487  2.9  PANTALLAS_SP1
+0   1046   5    0  5530  4.0  PANTALLAS_SP
+0      2   0    0             @const1084
+0     32   0    2             @PSTRINGC_723
+0     22   0    0             @const1086
+0     22   0    0             @const1087
+0    748   3    0  2898  3.0  pantalla_0_fija
+0      4   0    0             @const1089
+0    186   1    9             @PRINTF_LU_723
+0      4   0    0             @const1093
+0      4   0    0             @const1095
+0      4   0    0             @const1097
+0      4   0    0             @const1099
+0      4   0    0             @const1100
+0      4   0    0             @const1101
+0      4   0    0             @const1102
+0      8   0    0             @const1107
+0     64   0    5             @FTOSD
+0    142   1   13             @DIV3232
+0    468   2   13             @PRINTF_L32D_723FPFPFR
+0      8   0    0             @const1119
+0    118   1   10             @FLT
+0      8   0    0             @const1126
+0      8   0    0             @const1130
+0    562   3    0  2030  2.0  pantalla_1_fija
+0      4   0    0             @const1135
+0      4   0    0             @const1137
+0      8   0    0             @const1139
+0      8   0    0             @const1140
+0      8   0    0             @const1141
+0      6   0    0             @const1142
+0      6   0    0             @const1144
+0      6   0    0             @const1148
+0    164   1   12             @PRINTF_L32U_723
+0      6   0    0             @const1152
+0      6   0    0             @const1156
+0    720   3    0  2584  2.9  pantalla_2_fija
+0      6   0    0             @const1160
+0      6   0    0             @const1161
+0      6   0    0             @const1162
+0      6   0    0             @const1163
+0      8   0    0             @const1164
+0      8   0    0             @const1165
+0      8   0    0             @const1166
+0      8   0    0             @const1167
+0      6   0    0             @const1168
+0      6   0    0             @const1170
+0      6   0    0             @const1172
+0      6   0    0             @const1174
+0      6   0    0             @const1176
+0      6   0    0             @const1178
+0      6   0    0             @const1180
+0      6   0    0             @const1182
+0    336   2    0  1140  3.4  pantalla_3_fija
+0      8   0    0             @const1185
+0      8   0    0             @const1186
+0      6   0    0             @const1187
+0      6   0    0             @const1188
+0      6   0    0             @const1189
+0      6   0    0             @const1191
+0      6   0    0             @const1193
+0      6   0    0             @const1195
+0     96   0    1   505  4.6  Cambiar_pantalla
+0      2   0    0             @const1199
+0   1544   7    2  8578  6.4  Modo_programacion1
+0      2   0    0             @const1202
+0     16   0    0             @const1203
+0      2   0    0             @const1204
+0     48   0    0   238  2.3  MAX6675_init
+0    304   1   12  1471 10.2  MAX6657_get_ADC
+0    240   1    7   299  6.4  MAX6675_get_T
+0    372   2    0   812  4.8  Adquirir
+0     54   0    0   238  4.1  timer1_isr
+0    786   4    1  2541  4.9  MAIN
+0      8   0    0             @const1233
+0     22   0    0             @const1234
+0     12   0    0             @const1235
+0      2   0    0             @const1236
+0      2   0    0             @const1237
+0     18   0    0             @const1238
+0      2   0    0             @const1239
+0     80   0    0   303  2.3  setup
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               28
+    Statements              1491
+    Comments                1891
+    Volume (V)              55953
+    Difficulty (D)          111.9
+    Effort to implement (E) 6259374
+    Time to implement (T)   96 hours, 36 minutes
+    Est Delivered Bugs (B)  11
+    Cyclomatic Complexity   195
+    Maintainability (MI)    74
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-00094   142  0  
+00096-07FFE  11042  21576  
+
+
+

@@ -1,0 +1,31 @@
+[PROJECT]
+Target=18F4550.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.015
+Compiler=PCH
+[Target Data]
+FileList=18F4550.c
+[Directories]
+Include=C:\Program Files\PICC\Devices\;C:\Program Files\PICC\Drivers\;C:\Program Files\PICC\Drivers\C:\Program Files\PICC\Devices\
+[18F4550.c]
+Type=4
+[mru-list]
+1=18F4550.c
+[Opened Files]
+1=18F4550.c
+2=
+3=Adquirir_Datos.c
+4=includes.c
+5=
+6=Pantallas.c
+7=..\..\..\..\..\Horno 1\Soft PIC\18F4550 nuevo.c
+8=
+9=MAX6675.h
+10=MAX6675.c
+11=
+12=
+13=Adquirir_Datos.c
+14=
+[Units]
+Count=1
+1=18F4550 (main)

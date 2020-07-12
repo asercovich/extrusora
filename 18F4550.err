@@ -1,0 +1,6 @@
+>>> Warning 216 "18F4550.c" Line 183(1,2): Interrupts disabled during call to prevent re-entrancy:  (@MULFF)
+>>> Warning 216 "18F4550.c" Line 183(1,2): Interrupts disabled during call to prevent re-entrancy:  (@ADDFF)
+>>> Warning 216 "18F4550.c" Line 183(1,2): Interrupts disabled during call to prevent re-entrancy:  (@FLT)
+      Memory usage:   ROM=34%      RAM=6% - 9%
+      0 Errors,  3 Warnings.
+Build Successful.

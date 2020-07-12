@@ -1,0 +1,4 @@
+*** Error 128 "Adquirir_Datos.c" Line 3(17,18): A #DEVICE required before this line
+--- Info 300 "Adquirir_Datos.c" Line 3(16,17): More info:   ** I/O error 131
+      1 Errors,  0 Warnings.
+Build Failed.

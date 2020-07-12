@@ -1,0 +1,38 @@
+
+     
+ Void Adquirir(){      
+
+
+                           //MODULO TERMOCUPLA SPI 
+                           
+                           state = MAX6657_get_ADC(&ti);
+                           unit = deg_C;
+                           tf = MAX6675_get_T(ti, unit);
+                           
+                           IF (CS==0){
+                           //delay_ms(100);
+                           Temp_Z1=tf;}
+                           
+                           IF (CS==1){
+                           //delay_ms(100);
+                           Temp_Z2=tf;}
+                           
+                           IF (CS==2){
+                           //delay_ms(100);
+                           Temp_Z3=tf;}
+                           
+                           IF (CS==3){
+                           //delay_ms(100);
+                           Temp_Z4=tf;}
+                           
+                           delay_ms(100);
+                  
+   IF (Temp_Z3 < SP_Z3) OUTPUT_HIGH(RESISTENCIA_Z3);
+   ELSE OUTPUT_LOW(RESISTENCIA_Z3);
+   IF (Temp_Z4 < SP_Z4) OUTPUT_HIGH(RESISTENCIA_Z4);
+   ELSE OUTPUT_LOW(RESISTENCIA_Z4);
+   IF (Temp_Z2 < SP_Z2) OUTPUT_HIGH(RESISTENCIA_Z2);
+   ELSE OUTPUT_LOW(RESISTENCIA_Z2);
+   IF (Temp_Z1 < SP_Z1) OUTPUT_HIGH(RESISTENCIA_Z1);
+   ELSE OUTPUT_LOW(RESISTENCIA_Z1); 
+ }

@@ -1,0 +1,181 @@
+#include <18F4550.h>
+#device adc=10
+#fuses HSPLL, PLL5, USBDIV, CPUDIV1, NOWDT,NOPROTECT,NOLVP,NODEBUG,VREGEN,PUT,NOMCLR BROWNOUT//,BORV43
+#use delay(clock=48m)
+#use standard_io(B)
+//#use standard_io(c)
+//#use standard_io(d)
+#include<includes.c>
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//MODULO TERMOCUPLA SPI
+void setup();
+void lcd_load_symbols();
+int8 conta=0;
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//TIMER1 PARA LEER MODULOS TERMOCUPLAS
+#INT_TIMER1
+void timer1_isr(void)
+{
+   clear_interrupt(INT_TIMER1);
+   set_timer1(3036);
+   if(CS==4){
+   CS = 0; 
+   Adquirir();
+   CS ++;
+   }      
+}
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//Reincipal
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+void main() { 
+///////////////////////////////////////////////////////////////////////////////////////////////
+//TIMER1
+   setup_timer_1 ( T1_INTERNAL | T1_DIV_BY_8 ); // Internal clock and prescaler 8
+   set_timer1(3036);                            // Preload value
+   clear_interrupt(INT_TIMER1);                 // Clear Timer1 interrupt flag bit
+   enable_interrupts(INT_TIMER1);               // Enable Timer1 interrupt;
+   enable_interrupts(global);
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//MODULO TERMOCUPLA
+   setup();
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+INT16 key=0;
+ 
+   set_tris_a (0b00000011);
+   set_tris_b (0b00000000);
+   set_tris_c (0b00000000); //EN PROTEUS(0b01111011);// EN REAL (0b00000000);
+   set_tris_d (0b00000000);
+   set_tris_e (0b00001000);
+   
+   SPPCON = 0;
+   
+   PORTA = 0;
+   PORTB = 0;
+   PORTC = 0;
+   PORTD = 0;
+  
+   OUTPUT_low(BEEP);
+   lcd_init();
+   lcd_gotoxy(1,1);
+   lcd_putc("H2-Tec");
+   lcd_gotoxy(1,3);
+   lcd_putc("Sistema de extrusion");
+   lcd_gotoxy(1,4);
+   lcd_putc("Version 1.0");
+   Beep_largo();  
+   lcd_putc("\f");  
+   
+   //RECUPERA LOS VALORES DE SET POINT
+   SP_Z4 = Leer_EEPROM(DIR_SPZ4);
+   SP_Z3 = Leer_EEPROM(DIR_SPZ3);
+   SP_Z2 = Leer_EEPROM(DIR_SPZ2);  
+   SP_Z1 = Leer_EEPROM(DIR_SPZ1);
+   SP_I_MOT = Leer_EEPROM(DIR_SP_I_MOT);
+   SP_T_MOT = Leer_EEPROM(DIR_SP_T_MOT);
+   OFFSET_Z1 = Leer_EEPROM(DIR_OFF_Z1);
+   OFFSET_Z2 = Leer_EEPROM(DIR_OFF_Z2);
+   OFFSET_Z3 = Leer_EEPROM(DIR_OFF_Z3);
+   OFFSET_Z4 = Leer_EEPROM(DIR_OFF_Z4);
+   OFFSET_MOT = Leer_EEPROM(DIR_OFF_MOT);
+   OFFSET_AMB = Leer_EEPROM(DIR_OFF_AMB);
+   MAX_Z1 = Leer_EEPROM(DIR_MAX_Z1);
+   MAX_Z2 = Leer_EEPROM(DIR_MAX_Z2);
+   MAX_Z3 = Leer_EEPROM(DIR_MAX_Z3);
+   MAX_Z4 = Leer_EEPROM(DIR_MAX_Z4);
+   MAX_MOT = Leer_EEPROM(DIR_MAX_MOT);
+   MAX_AMB = Leer_EEPROM(DIR_MAX_AMB);
+  
+///////////////////////////////////////////////////////////////////////////////////////////////
+//Loop infinito
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+   while(TRUE){
+   
+   //CS=0;
+   //WHILE (CS< 4){
+   //Adquirir();///////////////////////////////////////////////////////////////////////////////////////////////////
+   //CS++;
+   //}
+   
+      enable_interrupts(INT_TIMER1);               // Enable Timer1 interrupt;
+   enable_interrupts(global);
+                       
+   /////////  Pantallas    /////////
+   if (Pantalla_actual == 0){
+      pantalla_0_fija();
+   } 
+   else if (Pantalla_actual == 1)
+      pantalla_1_fija();
+  
+   else if (Pantalla_actual == 2)
+      pantalla_2_fija();
+   else if (Pantalla_actual == 3)
+      pantalla_3_fija();
+   
+   key=leer_botones();
+   if(flag_programacion==0){
+      if(key==SW_ARRIBA)
+            Cambiar_pantalla(SW_ARRIBA);
+      else if(key==SW_ABAJO)
+            Cambiar_pantalla(SW_ABAJO);
+      else if(key==SW_CENTRO){
+            flag_programacion=1;
+             lcd_putc("\f");
+       lcd_gotoxy(2,2);
+    printf(lcd_putc,"MODO PROGRAMACION");
+    delay_ms(500);
+    lcd_putc("\f");
+      }
+   }
+   else if(flag_programacion==1)
+      Modo_programacion1(key);
+      
+//TECLADO
+   //Teclado();
+   }  //cierro while(1)
+}     //cierro main
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//MODULO TERMOCUPLA SPI
+void setup()
+{
+   //disable_interrupts(global);
+   setup_SPI(SPI_DISABLED | SPI_SS_DISABLED);
+   setup_comparator(NC_NC_NC_NC);
+   setup_adc(ADC_OFF);
+   setup_adc_ports(no_analogs);
+   setup_psp(FALSE);
+   setup_CCP1(CCP_OFF);
+   setup_CCP2(CCP_OFF);
+   setup_timer_0(T0_INTERNAL | T0_DIV_256 | T0_8_BIT);
+   set_timer0(0x00);
+   setup_timer_2(T2_DISABLED, 0xFF, 1);
+   set_timer2(0x00);
+   
+   MAX6675_init();  
+}
+
+void lcd_load_symbols()  
+{
+   unsigned char i = 0;     
+   
+   lcd_send_byte(0, 0x40); 
+   
+   for(i = 0; i < 8; i++)
+   {
+        lcd_send_byte(1, degree_symbol[i]);
+   }
+   
+   lcd_send_byte(0, 0x80);
+} 
+///////////////////////////////////////////////////////////////////////////////////////////////

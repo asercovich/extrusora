@@ -1,0 +1,362 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017-01A ADC_TERMOCUPLA_Z1
+01B-01E ADC_TERMOCUPLA_Z2
+01F-022 ADC_TERMOCUPLA_Z3
+023-026 ADC_TERMOCUPLA_Z4
+027-02A ADC_TEMPERATURA_AMBIENTE
+02B-02E ADC_TEMPERATURA_MOTOR
+02F-032 Temp_Z1
+033-036 Temp_Z2
+037-03A Temp_Z3
+03B-03E Temp_Z4
+03F-040 Temp_Mot
+041-042 Temp_Amb
+043-044 flag
+045-046 SP_Z1
+047-048 SP_Z2
+049-04A SP_Z3
+04B-04C SP_Z4
+04D-04E SP_I_MOT
+04F-050 SP_T_MOT
+051-052 OFFSET_Z1
+053-054 OFFSET_Z2
+055-056 OFFSET_Z3
+057-058 OFFSET_Z4
+059-05A OFFSET_AMB
+05B-05C OFFSET_MOT
+05D-05E MAX_Z1
+05F-060 MAX_Z2
+061-062 MAX_Z3
+063-064 MAX_Z4
+065-066 MAX_AMB
+067-068 MAX_MOT
+069     Pantalla_actual
+06A     flag_programacion
+06B     CONTADOR_SP
+06C     FLAG_BOTON
+06C.2   FLAG_FIN_SP2
+06C.3   FLAG_FIN_SP1
+06C.4   FLAG_CENTRO_SP
+06D     lcd_line
+06E-06F strtok.save
+070-073 _Randseed
+074     CS
+075     unit
+076     state
+077-078 ti
+079-07C tf
+07D-07E CONTA
+07F-080 MAIN.key
+081     Cambiar_pantalla.key
+081     lcd_init.i
+081-082 Leer_EEPROM.dir
+081-082 Modo_programacion1.key
+081     MAIN.@SCRATCH1
+082-085 @PRINTF_L32D_723FPFPFR.P1
+082-085 @PRINTF_L32U_723.P2
+082-083 @PRINTF_LU_723.P3
+082     lcd_init.@SCRATCH1
+083-084 Guardar_EEPROM.dato
+083     Leer_EEPROM.low
+083     @PSTRINGC_723.@SCRATCH1
+084     Leer_EEPROM.high
+084     @PSTRINGC_723.@SCRATCH2
+084     @PRINTF_LU_723.@SCRATCH1
+085-086 Guardar_EEPROM.dir
+085-086 Leer_EEPROM.res
+085     @PRINTF_LU_723.@SCRATCH2
+086     @PRINTF_L32D_723FPFPFR.P1
+086     @PRINTF_LU_723.@SCRATCH3
+086     @PRINTF_L32U_723.@SCRATCH1
+087     Guardar_EEPROM.aux_l
+087     Leer_EEPROM.@SCRATCH1
+087     @PRINTF_LU_723.@SCRATCH4
+087     @PRINTF_L32D_723FPFPFR.@SCRATCH1
+087     @PRINTF_L32U_723.@SCRATCH2
+088     Guardar_EEPROM.aux_h
+088     Leer_EEPROM.@SCRATCH2
+088     @PRINTF_LU_723.@SCRATCH5
+088     @PRINTF_L32D_723FPFPFR.@SCRATCH2
+088     @PRINTF_L32U_723.@SCRATCH3
+089-08A Guardar_EEPROM.aux
+089     Leer_EEPROM.@SCRATCH3
+089     @PRINTF_LU_723.@SCRATCH6
+089     @PRINTF_L32D_723FPFPFR.@SCRATCH3
+089     @PRINTF_L32U_723.@SCRATCH4
+08A     @PRINTF_LU_723.@SCRATCH7
+08A     @PRINTF_L32D_723FPFPFR.@SCRATCH4
+08A     @PRINTF_L32U_723.@SCRATCH5
+08B     Guardar_EEPROM.@SCRATCH1
+08B     @PRINTF_L32D_723FPFPFR.@SCRATCH5
+08B     @PRINTF_L32U_723.@SCRATCH6
+08C     Guardar_EEPROM.@SCRATCH2
+08C     @PRINTF_L32D_723FPFPFR.@SCRATCH6
+08C     @PRINTF_L32U_723.@SCRATCH7
+08D     Guardar_EEPROM.@SCRATCH3
+08D     @PRINTF_L32D_723FPFPFR.@SCRATCH7
+08D     @PRINTF_L32U_723.@SCRATCH8
+08E     @PRINTF_L32D_723FPFPFR.@SCRATCH8
+08F-092 @FTOSD.P1
+08F-092 @DIV3232.P2
+08F     lcd_putc.c
+090     lcd_gotoxy.x
+090     @delay_ms1.P1
+091     lcd_gotoxy.y
+092     lcd_gotoxy.address
+093-096 @DIV3232.P1
+093     lcd_gotoxy.@SCRATCH1
+093     @FTOSD.@SCRATCH1
+094     lcd_send_byte.address
+095     lcd_send_byte.n
+096     lcd_read_byte.low
+096     lcd_send_byte.@SCRATCH1
+097     lcd_send_nibble.nibble
+097     lcd_read_byte.high
+097     @DIV3232.@SCRATCH1
+098     lcd_read_nibble.retval
+098.0   lcd_read_nibble.retval_0
+098.1   lcd_read_nibble.retval_1
+098.2   lcd_read_nibble.retval_2
+098.3   lcd_read_nibble.retval_3
+098     lcd_read_byte.@SCRATCH1
+098     @DIV3232.@SCRATCH2
+099     @DIV3232.@SCRATCH3
+09A     @DIV3232.@SCRATCH4
+09B     @DIV3232.@SCRATCH5
+09F-0A2 @FLT.P1
+09F-0A0 MAX6675_get_T.ADC_value
+09F-0A0 MAX6657_get_ADC.ADC_data
+0A1     MAX6657_get_ADC.clk_pulses
+0A1     MAX6675_get_T.T_unit
+0A2-0A5 MAX6675_get_T.tmp
+0A2     MAX6657_get_ADC.samples
+0A3-0A6 @FLT.P1
+0A3-0A4 MAX6657_get_ADC.temp_data
+0A5-0A8 MAX6657_get_ADC.avg_value
+0A6-0A7 @ITOF.P1
+0A6-0A9 @ADDFF.P2
+0A6-0A9 @MULFF.P3
+0A7     @FLT.@SCRATCH1
+0A8     @FLT.@SCRATCH2
+0A9     MAX6657_get_ADC.@SCRATCH1
+0AA-0AD @MULFF.P1
+0AA-0AD @ADDFF.P2
+0AA     MAX6657_get_ADC.@SCRATCH2
+0AE     @MULFF.@SCRATCH1
+0AE     @ADDFF.@SCRATCH1
+0AF     @MULFF.@SCRATCH2
+0AF     @ADDFF.@SCRATCH2
+0B0     @MULFF.@SCRATCH3
+0B0     @ADDFF.@SCRATCH3
+0B1     @ADDFF.@SCRATCH4
+0B2     @ADDFF.@SCRATCH5
+0B3     @ADDFF.@SCRATCH6
+0B4     @ADDFF.@SCRATCH7
+0B5     @ADDFF.@SCRATCH8
+F65     SPPCON
+F80     PORTA
+F81     PORTB
+F81     PORT
+F82     PORTC
+F83     PORTD
+F83     PSP_DATA
+F84     PORTE
+F93     TRISB
+FB4     CMCON
+FB4.6   C1OUT
+FB4.7   C2OUT
+FB5     CVRCON
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FC0     ADCON2
+FC1     ADCON1
+FC3     ADRESL
+FC4     ADRESH
+FD8     STATUS
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  LCD_INIT_STRING.call
+0000B0  LCD_INIT_STRING.data
+0000B4  @const1084.call
+0000B6  @const1086.call
+0000CC  @const1087.call
+0000E2  @const1089.call
+0000E6  @const1093.call
+0000EA  @const1095.call
+0000EE  @const1097.call
+0000F2  @const1099.call
+0000F6  @const1100.call
+0000FA  @const1101.call
+0000FE  @const1102.call
+000102  @const1107.call
+00010A  @const1119.call
+000112  @const1126.call
+00011A  @const1130.call
+000122  @const1135.call
+000126  @const1137.call
+00012A  @const1139.call
+000132  @const1140.call
+00013A  @const1141.call
+000142  @const1142.call
+000148  @const1144.call
+00014E  @const1148.call
+000154  @const1152.call
+00015A  @const1156.call
+000160  @const1160.call
+000166  @const1161.call
+00016C  @const1162.call
+000172  @const1163.call
+000178  @const1164.call
+000180  @const1165.call
+000188  @const1166.call
+000190  @const1167.call
+000198  @const1168.call
+00019E  @const1170.call
+0001A4  @const1172.call
+0001AA  @const1174.call
+0001B0  @const1176.call
+0001B6  @const1178.call
+0001BC  @const1180.call
+0001C2  @const1182.call
+0001C8  @const1185.call
+0001D0  @const1186.call
+0001D8  @const1187.call
+0001DE  @const1188.call
+0001E4  @const1189.call
+0001EA  @const1191.call
+0001F0  @const1193.call
+0001F6  @const1195.call
+0001FC  @const1199.call
+0001FE  @const1202.call
+000200  @const1203.call
+000210  @const1204.call
+000212  MAX6657_get_ADC
+000342  @ITOF
+000378  @MULFF
+00046A  @ADDFF
+0006D4  MAX6675_get_T
+0007C4  @FLT
+00083A  Adquirir
+0009AE  timer1_isr
+0009E4  @const1233.call
+0009EC  @const1234.call
+000A02  @const1235.call
+000A0E  @const1236.call
+000A10  @const1237.call
+000A12  @const1238.call
+000A24  @const1239.call
+000A26  MAX6675_init
+000A56  setup
+000AA6  @delay_ms1
+000ACE  lcd_send_nibble
+000B14  lcd_read_nibble
+000B58  lcd_read_byte
+000B7C  lcd_send_byte
+000BBE  lcd_init
+000C1C  lcd_gotoxy
+000C5C  lcd_putc
+000CA4  @PSTRINGC_723
+000CC4  Beep_largo
+000D04  Leer_EEPROM
+000D5C  @PRINTF_LU_723
+000E16  @FTOSD
+000E56  @DIV3232
+000EE4  @PRINTF_L32D_723FPFPFR
+0010B8  pantalla_0_fija
+0013A4  @PRINTF_L32U_723
+001448  pantalla_1_fija
+00167A  pantalla_2_fija
+00194A  pantalla_3_fija
+001A9A  TRIS_IN
+001AB0  leer_botones
+001BCC  Cambiar_pantalla
+001C2C  PANTALLAS_SP
+002042  PANTALLAS_SP1
+00219C  Guardar_EEPROM
+00226A  Beep_corto
+00229E  Modo_programacion1
+0028A6  MAIN
+0028A6  @cinit1
+002916  @cinit2
+0136  StrtoulGO
+0136  StrtolGO
+
+Project Directory:
+    C:\Users\Agustin\Desktop\Cables nuevo\2-Equipamiento\Extrusora\ELECTRONICA SEGUNDO\Soft Pic\Diego nuevo\TERCERO INT en uso\
+
+Project Files:
+    18F4550.c                                               [10-ago-19 07:27  CRC=82A539A8]
+    ..\..\..\..\..\..\..\..\..\..\Program Files\PICC\Devices\18F4550.h [12-nov-13 14:35  CRC=5337E248]
+    includes.c                                              [30-jul-19 12:41  CRC=3EC8379A]
+    FLEX_LCD420.c                                           [27-jul-18 21:55  CRC=3A23C0E6]
+    ..\..\..\..\..\..\..\..\..\..\Program Files\PICC\Drivers\stdlib.h [08-jun-11 14:39  CRC=0B6669CF]
+    ..\..\..\..\..\..\..\..\..\..\Program Files\PICC\Drivers\stddef.h [16-jul-10 09:27  CRC=897CEC6C]
+    ..\..\..\..\..\..\..\..\..\..\Program Files\PICC\Drivers\string.h [14-jul-11 10:13  CRC=23EDEC8F]
+    ..\..\..\..\..\..\..\..\..\..\Program Files\PICC\Drivers\ctype.h [03-ene-08 13:55  CRC=2D1F019F]
+    Base.c                                                  [04-nov-18 14:13  CRC=8D69CBED]
+    TECLADO2.c                                              [04-nov-18 17:10  CRC=952725D1]
+    Pantallas.c                                             [29-jul-19 17:52  CRC=9346DFEB]
+    Modo_programacion.c                                     [04-nov-18 14:17  CRC=717380F5]
+    MAX6675.c                                               [29-jul-19 17:28  CRC=313A0840]
+    MAX6675.h                                               [29-jul-19 17:13  CRC=3CC37BF5]
+    Adquirir_Datos.c                                        [30-jul-19 13:11  CRC=C865435E]
+
+Source signature=5ACCB668
+
+Units:
+    18F4550 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   18F4550.xsym
+    Errors:      18F4550.err
+    Ext Symbols: 18F4550.esym
+    INHX32:      18F4550.hex
+    Symbols:     18F4550.sym
+    List:        18F4550.lst
+    Debug/COFF:  18F4550.cof
+    Project:     18F4550.ccspjt
+    Call Tree:   18F4550.tre
+    Statistics:  18F4550.STA
