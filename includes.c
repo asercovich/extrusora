@@ -20,6 +20,9 @@
 #define RESISTENCIA_Z2 pin_D6
 #define RESISTENCIA_Z3 pin_D0
 #define RESISTENCIA_Z4 pin_C1
+
+#define ELECTROVALVULA_Z3 pin_D4
+#define ELECTROVALVULA_Z4 pin_C7
 /*
 #define ELECTROVALVULA_Z1 pin_C1
 #define ELECTROVALVULA_Z2 pin_D1

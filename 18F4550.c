@@ -107,7 +107,7 @@ INT16 key=0;
    enable_interrupts(global);
   
 ///////////////////////////////////////////////////////////////////////////////////////////////
-//Loop infinito
+//                                           Loop infinito
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
    while(TRUE){
@@ -118,13 +118,15 @@ INT16 key=0;
    if (Pantalla_actual == 0){
       pantalla_0_fija();
    } 
-   else if (Pantalla_actual == 1)
+   else if (Pantalla_actual == 1){
       pantalla_1_fija();
-  
-   else if (Pantalla_actual == 2)
+   }
+   else if (Pantalla_actual == 2){
       pantalla_2_fija();
-   else if (Pantalla_actual == 3)
+   }
+   else if (Pantalla_actual == 3){
       pantalla_3_fija();
+   }
    
    key=leer_botones();
    if(flag_programacion==0){
